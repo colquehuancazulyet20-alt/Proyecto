@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2do Grado</title>
+    <link rel="stylesheet" href="../../CSS/cursos/segundo.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="logo">
+        <img src="img/logo.png" alt="Logo" />
+      </div>
+      <div class="menu">
+        <button class="hover" onclick="location.href='#Cursos'">Cursos</button>
+        <button class="hover" onclick="location.href='#Foro'">Foro</button>
+        <button class="hover" onclick="location.href='#Comunicación'">Comunicación</button>
+      </div>
+      <div class="perfil">
+        <a href="../../login.html">
+          <img src="img/perfil-logo.png" alt="Login" /></a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="carousel-container">
+    <div class="carousel-slide" id="carousel-slide">
+      <img src="img/Carrusel/Escuela.jpg" alt="Imagen 1" />
+      <img src="img/Carrusel/Otra.jpg" alt="Imagen 2" />
+      <img src="img/Carrusel/Tercera.jpg" alt="Imagen 3" />
+    </div>
+  </div>
+
+  <div class="institucional">
+    Escuela Primaria N°23 D.E.20"
+  </div>
+
+  <div class="centro">
+    <div class="bloque1">
+      <section id="Cursos">
+        <h2>Cursos</h2>
+        <div class="grados">
+          <a href="primero.html" class="grado">1er Grado</a>
+          <a href="segundo.html" class="grado activo">2do Grado</a>
+          <a href="tercero.html" class="grado">3ro Grado</a>
+          <a href="cuarto.html" class="grado">4to Grado</a>
+          <a href="quinto.html" class="grado">5to Grado</a>
+          <a href="sexto.html" class="grado">6to Grado</a>
+          <a href="septimo.html" class="grado">7mo Grado</a>
+        </div>
+      </section>
+    </div>
+
+    <div class="Comunicados">
+      <div class="bloque2">
+        <section id="Foro">
+          <div class="info">
+            <div class="encabesado">
+              <h2>Secretaría</h2>
+              <p>15/04/25  10:00 am</p>
+            </div>
+            <hr />
+
+            <div class="texto">
+              <h3>Tarea: Leer un cuento en casa</h3>
+              <p>Para el próximo jueves, cada alumno deberá leer un cuento corto y traer un resumen escrito para compartir con la clase.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="comentarios">
+      <hr>
+      <p>Comenta</p>
+    </div>
+  </div>
+
+  <section id="Comunicación">
+    <div class="contenido">
+      <h2> <i class="fas fa-map-marker-alt"></i> Dirección</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.803720729567!2d-58.501414523530364!3d-34.659659572934245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc99a37e0595f%3A0x14f10de947a2fea2!2sEscuela%20primaria%20N%C2%B0%2023%20D.E.%2020!5e0!3m2!1ses-419!2sar!4v1755713948816!5m2!1ses-419!2sar" width="800" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <footer>
+      <div class="contactos">
+        <p class="titulo"> Contactos</p>
+        <p><i class="fa-solid fa-phone"></i> 11999999</p>
+        <p><i class="fa-solid fa-envelope"></i> consultas.ed23@gmail.com</p>
+      </div>
+
+      <div class="contactos">
+        <p class="titulo">Síguenos</p>
+        <p><i class="fa-brands fa-instagram"></i>Instagram </p>
+      </div>
+
+      <div class="contactos">
+        <img src="../../Img/Principal/Logo-footer.png" alt="Logo" class="logo">
+      </div>
+
+      <p>© 2025  - Todos los derechos reservados</p>
+      <hr>
+    </footer>
+  </section>
+
+  <script>
+    const slide = document.getElementById('carousel-slide');
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % 3;
+      slide.style.transform = `translateX(-${index * 100}vw)`;
+    }, 3000);
+  </script>
+</body>
+</html>
