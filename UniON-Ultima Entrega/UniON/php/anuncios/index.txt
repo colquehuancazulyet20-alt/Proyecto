@@ -1,0 +1,38 @@
+<?php
+session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+require_once("../../php/connection.php");
+$conn = connection();
+
+$sql = "SELECT a.*, u.Nombre, u.Apellido, u.Rol 
+        FROM anuncios a 
+JOIN login u ON a.UsuarioID = u.ID
+        ORDER BY a.ID DESC LIMIT 1";
+
+$result = $conn->query($sql);
+
+if ($row = $result->fetch_assoc()) {
+  $id_anuncio = $row['ID'];
+  $_SESSION['ultimo_anuncio_id'] = $id_anuncio;
+
+  echo "<div id='anuncio-publicado'>";
+  include("ver_anuncio.php");
+  echo "</div>";
+
+  echo "<div id='comentarios-area'>";
+  echo "<form action='comentar.php' method='POST'>";
+  echo "<input type='hidden' name='id_anuncio' value='$id_anuncio' />";
+  echo "<input type='text' name='usuario' placeholder='Tu nombre' required />";
+  echo "<textarea name='comentario' placeholder='Escribí tu comentario...' required></textarea>";
+  echo "<button type='submit'>💬 Comentar</button>";
+  echo "</form>";
+
+ 
+    include("../../php/comentarios/ver_comentario.php");
+  echo "</div>";
+} else {
+  echo "<p>No hay anuncios publicados aún.</p>";
+}
+?>
